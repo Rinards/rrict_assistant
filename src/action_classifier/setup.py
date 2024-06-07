@@ -18,8 +18,8 @@ setup(
     ],
     classifiers=[
         'Intended Audience :: Science/Research',
-        'Operating System :: POSIX :: Linux',        
+        'Operating System :: POSIX :: Linux',
         'Programming Language :: Python :: 3',
-        'License :: OSI Approved :: MIT License',  
+        'License :: OSI Approved :: MIT License',
     ],
 )
