@@ -38,7 +38,11 @@ if __name__ == '__main__':
     df = df.sample(frac=1) # shuffle
 
     model = Net(class_num)
+
+    device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+    model.to(device)
+
     dataloader = create_data_loader(df, tokenizer, 128, 16)
 
-    train(model, dataloader)
+    train(model, dataloader, device=device)
     torch.save(model.state_dict(), model_path)

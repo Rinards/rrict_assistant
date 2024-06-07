@@ -56,7 +56,8 @@ class Net(nn.Module):
         self.l4.requires_grad = True
 
         for name, param in self.albert.named_parameters():
-            param.requires_grad = False
+            # param.requires_grad = False
+            param.requires_grad = True
 
     def forward(self, x):
         x = self.tokenizer(x, padding=True, truncation=True, return_tensors='pt')
@@ -83,6 +84,7 @@ def train(model, data_loader, conf=Config(), device='cpu'):
     if type(device) is str:
         device = torch.device(device)
 
+    model.to(device)
     pid = os.getpid()
 
     torch.manual_seed(conf.seed)
