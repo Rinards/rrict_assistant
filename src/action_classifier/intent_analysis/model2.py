@@ -99,8 +99,8 @@ def train(model, data_loader, conf=Config(), device='cpu'):
         for data in data_loader:
             optimizer.zero_grad()
 
-            X = data['review_text']
-            Y = data['targets']
+            X = data['review_text'].to(device)
+            Y = data['targets'].to(device)
 
             output = model(X)
 
