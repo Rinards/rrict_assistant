@@ -60,7 +60,7 @@ class Net(nn.Module):
             param.requires_grad = True
 
     def forward(self, x):
-        x = self.tokenizer(x, padding=True, truncation=True, return_tensors='pt')
+        x = self.tokenizer(x, padding=True, truncation=True, return_tensors='pt').to(next(self.parameters()).device)
 
         attention_mask = x['attention_mask']
 
@@ -99,7 +99,7 @@ def train(model, data_loader, conf=Config(), device='cpu'):
         for data in data_loader:
             optimizer.zero_grad()
 
-            X = data['review_text'].to(device)
+            X = data['review_text']
             Y = data['targets'].to(device)
 
             output = model(X)
