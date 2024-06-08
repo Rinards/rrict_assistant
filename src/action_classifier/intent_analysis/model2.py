@@ -24,7 +24,7 @@ albert_model = AutoModel.from_pretrained(MODEL_NAME)
 class Config:
     batch_size: int = 16
     shuffle: bool = True
-    epochs: int = 3
+    epochs: int = 4
     seed: int = 20
     lr: float = 0.0022
 
