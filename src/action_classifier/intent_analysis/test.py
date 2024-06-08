@@ -60,7 +60,8 @@ if __name__ == '__main__':
     model2 = Net2(class_num)
 
     print("Running fine-tuned model")
-    model2.load_state_dict(torch.load(model_path))
+    device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+    model2.load_state_dict(torch.load(model_path, map_location=device))
     model2.eval()
 
     def run_model2(sentences):
