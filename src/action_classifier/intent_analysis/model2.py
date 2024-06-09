@@ -24,9 +24,32 @@ albert_model = AutoModel.from_pretrained(MODEL_NAME)
 class Config:
     batch_size: int = 16
     shuffle: bool = True
-    epochs: int = 3
-    seed: int = 22
-    lr: float = 0.0021
+    epochs: int = 4
+    seed: int = 20
+    lr: float = 0.0022
+
+def get_optimizer(model, lr):
+    no_decay = ["bias", "LayerNorm.weight"]
+    optimizer_grouped_parameters = [
+        {
+            "params": [p for n, p in model.albert.named_parameters() if not any(nd in n for nd in no_decay)],
+            "weight_decay": 0.01,
+            "lr": lr / 10,  # Use a lower learning rate for ALBERT
+        },
+        {
+            "params": [p for n, p in model.albert.named_parameters() if any(nd in n for nd in no_decay)],
+            "weight_decay": 0.0,
+            "lr": lr / 10,  # Use a lower learning rate for ALBERT
+        },
+        {
+            "params": [p for n, p in model.named_parameters() if "albert" not in n],
+            "weight_decay": 0.01,
+            "lr": lr,  # Use the original learning rate for the classifier layers
+        },
+    ]
+
+    optimizer = AdamW(optimizer_grouped_parameters, lr=lr)
+    return optimizer
 
 #Mean Pooling - Take attention mask into account for correct averaging
 def mean_pooling(model_output, attention_mask):
@@ -36,9 +59,10 @@ def mean_pooling(model_output, attention_mask):
 
 class Net(nn.Module):
     @staticmethod
-    def pretrained(class_num: int, model_path: str = "./MODEL"):
+    def pretrained(class_num: int, model_path: str = "./MODEL", device=torch.device("cpu")):
         model = Net(class_num)
-        model.load_state_dict(torch.load(model_path))
+        # device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+        model.load_state_dict(torch.load(model_path, map_location=device))
         return model
 
     def __init__(self, class_num: int):
@@ -56,8 +80,8 @@ class Net(nn.Module):
         self.l4.requires_grad = True
 
         for name, param in self.albert.named_parameters():
-            # param.requires_grad = False
-            param.requires_grad = True
+            param.requires_grad = False
+        #     param.requires_grad = True
 
     def forward(self, x):
         x = self.tokenizer(x, padding=True, truncation=True, return_tensors='pt').to(next(self.parameters()).device)
@@ -88,7 +112,9 @@ def train(model, data_loader, conf=Config(), device='cpu'):
     pid = os.getpid()
 
     torch.manual_seed(conf.seed)
-    optimizer = AdamW(model.parameters(), lr=conf.lr)
+    # optimizer = AdamW(model.parameters(), lr=conf.lr)
+    optimizer = get_optimizer(model, lr=conf.lr)
+
     # loss_fn = F.nll_loss
     # loss = nn.L1loss(output, Y)
     loss_fn = nn.CrossEntropyLoss().to(device)
@@ -106,6 +132,9 @@ def train(model, data_loader, conf=Config(), device='cpu'):
 
             loss = loss_fn(output, Y)
             loss.backward()
+
+            nn.utils.clip_grad_norm_(model.parameters(), max_norm=1.0)
+
             optimizer.step()
 
             if count % 10 == 0:
