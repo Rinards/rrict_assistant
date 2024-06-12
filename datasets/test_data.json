@@ -19,7 +19,17 @@
         "Set an alarm for me for 7:00 and another one set for 11:00",
         "Would you set my alarm for 6:00 and another for 8:30?",
         "Provide assistance by setting an alarm at 7:00 and another for 10:00",
-        "Wake me up at 6:30 AM tomorrow"
+        "Wake me up at 6:30 AM tomorrow",
+        "I need to be woken up at 7:00 AM tomorrow",
+        "Please wake me up at 8:00 AM tomorrow",
+        "Wake me up at 9:00 AM tomorrow",
+        "I need to be woken up at 10:00 AM tomorrow",
+        "Please wake me up at 11:00 AM tomorrow",
+        "Wake me up at 12:00 PM tomorrow",
+        "I need to be woken up at 1:00 PM tomorrow",
+        "Please wake me up at 2:00 PM tomorrow",
+        "Wake me up at 3:00 PM tomorrow",
+        "I need to be woken up at 4:00 PM tomorrow"
     ],
     "CANCEL": [
         "Stop talking, please",
@@ -41,7 +51,17 @@
         "I want you to cancel the current action",
         "Abort",
         "Please stop doing that",
-        "just fucking stop you twat"
+        "just fucking stop you twat",
+        "Cancel the current operation",
+        "Abort mission",
+        "Terminate process",
+        "Stop execution",
+        "Halt task",
+       " Discontinue activity",
+        "End session",
+        "Cancel job",
+        "Cease operation",
+        "Abort transaction"
     ],
     "DATE": [
         "What would tomorrow's date be?",
@@ -63,7 +83,17 @@
         "Please give me today's date",
         "What is today's date?",
         "What date is today?",
-        "What is today?"
+        "What is today?",
+        "What is the date today?",
+        "What is the date?",
+        "What is the current date?",
+        "What is the date today?",
+        "What is today's date?",
+        "Can you tell me the date?",
+        "What's the date today?",
+        "Could you provide today's date?",
+        "What's the current date?",
+        "Please give me today's date."
     ],
     "REPEAT": [
         "I'm sorry, can you repeat yourself?",
@@ -85,7 +115,17 @@
         "Would you please ask the question again?",
         "I am needing for you to say that again",
         "I need for you to ask the question again",
-        "Could you ask the question again?"
+        "Could you ask the question again?",
+        "Can you ask the question again?",
+        "Can you repeat the question?",
+        "Can you repeat the question, please?",
+        "Can you repeat the question again?",
+        "Can you repeat that?",
+        "Could you say that again?",
+        "Please repeat what you just said.",
+        "I didn't catch that, could you repeat it?",
+        "Would you mind repeating that?",
+        "Can you go over that again?"
     ],
     "TIMER": [
         "Set a five-minute timer, please",
@@ -107,7 +147,17 @@
         "Please start counting down from 10 minutes",
         "Let's get a timer going for 10 minutes",
         "I need a timer for 20 seconds",
-        "Timer 5 minutes"
+        "Timer 5 minutes",
+        "Set a timer for 10 minutes",
+        "Set a timer for 15 minutes",
+        "Set a timer for 20 minutes",
+        "Set a timer for 25 minutes",
+        "Set a timer for 30 minutes",
+        "Can you repeat that again",
+        "Could you say that one more time",
+        "Please repeat what you just mentioned",
+        "I didn't hear that clearly, can you repeat",
+        "Would you mind repeating that information"
     ],
     "TRANSLATE": [
         "How do you interpret 'hello' in Spanish?",
@@ -129,7 +179,17 @@
         "Convert 'hello' to Spanish well enough.",
         "Translate 'hello' into the Spanish language.",
         "What is 'hello' in the Spanish language?",
-        "How do you say 'hello' in Spanish?"
+        "How do you say 'hello' in Spanish?",
+        "What is the Spanish translation of 'hello'?",
+        "Translate 'hello' to Spanish.",
+        "How do you translate 'hello' to Spanish?",
+        "What is the Spanish word for 'hello'?",
+        "What is the Spanish translation for 'hello'?",
+        "How do you say 'hello' in Spanish?",
+        "What is the Spanish equivalent of 'hello'?",
+        "What is the Spanish for 'hello'?",
+        "What are the Spanish translation of 'hello'?",
+        "What is the Spanish of 'hello'?"
     ],
     "WEATHER": [
         "How's the weather in Chicago right now?",
@@ -151,7 +211,17 @@
         "Will there be snow flurries today?",
         "What's the forecast for the next 24 hours?",
         "How's the visibility outside right now?",
-        "What's the chance of snow this evening?"
+        "What's the chance of snow this evening?",
+        "Is there a heat advisory today?",
+        "What's the weather in New York City?",
+        "Is there a frost warning tonight?",
+        "What's the weather like in Los Angeles?",
+        "Will it be a sunny day?",
+        "What's the weather forecast for the next week?",
+        "Is there a severe thunderstorm warning today?",
+        "What's the current weather in San Francisco?",
+        "Is it going to be a cold day?",
+        "What's the weather like in Seattle?"
     ],
     "WHAT_CAN_I_ASK_YOU": [
         "What should I ask you about?",
@@ -173,7 +243,17 @@
         "How can I get you to help me?",
         "What types of things can I ask you?",
         "What sort of things can you help me with?",
-        "What are you able to do?"
+        "What are you able to do?",
+        "What can you help me with?",
+        "What can you assist me with?",
+        "What can you do for me?",
+        "What can you do to help me?",
+        "What can you do to assist me?",
+        "What can you do to aid me?",
+        "What can you do to support me?",
+        "What can you do to guide me?",
+        "What can you do to help me out?",
+        "What can you do to lend me a hand?"
     ],
     "YES": [
         "Yes, you bet",
@@ -195,7 +275,17 @@
         "Yes, I concur",
         "Yes, it is",
         "Yes, that's right",
-        "Yes, absolutely true"
+        "Yes, absolutely true",
+        "Yes, that's the truth",
+        "Yes, that's the fact",
+        "Yes, that's the reality",
+        "Yes, that's the case",
+        "Yes, that's the situation",
+        "Yes, that's the circumstance",
+        "Yes, that's the condition",
+        "Yes, that's the state",
+        "Yes, that's the status",
+        "Yes, that's the position"
     ],
     "CALCULATOR": [
         "Can you find the total of 100 and 150?",
@@ -217,7 +307,17 @@
         "Get the sum of 15 and 45.",
         "Subtract 33 from 78.",
         "Work out the product of 6 by 3.",
-        "What is the quotient of 42 by 7?"
+        "What is the quotient of 42 by 7?",
+        "What is the sum of 50 and 50?",
+        "What is the difference between 100 and 50?",
+        "What is the product of 10 and 10?",
+        "What is the quotient of 100 divided by 10?",
+        "What is the sum of 25 and 25?",
+        "What is the difference between 75 and 25?",
+        "What is the product of 5 and 5?",
+        "What is the quotient of 50 divided by 5?",
+        "What is the sum of 10 and 10?",
+        "What is the difference between 50 and 10?"
     ],
     "NO": [
         "I can't",
@@ -239,7 +339,17 @@
         "No, not at all",
         "Absolutely no",
         "In no way",
-        "I don't agree with that"
+        "I don't agree with that",
+        "I don't think so",
+        "I don't believe so",
+        "I don't agree with you",
+        "I don't think that's right",
+        "I don't believe that's true",
+        "I don't agree with that statement",
+        "I don't think that's accurate",
+        "I don't believe that's correct",
+        "I don't agree with that assessment",
+        "I don't think that's the case"
     ],
     "TALK_TO_ME": [
         "I need to have a talk",
@@ -261,7 +371,17 @@
         "I need to talk to you",
         "I want to communicate with you",
         "Can we have a chat?",
-        "Let's have a conversation"
+        "Let's have a conversation",
+        "I need to have a conversation",
+        "I want to have a conversation",
+        "Can we have a conversation?",
+        "Let's have a conversation",
+        "Can you talk to me?",
+        "Would you mind talking to me?",
+        "Can we have a conversation?",
+        "Could you speak with me for a moment?",
+        "Can we chat?",
+        "Would you like to talk with me?"
     ],
     "WEB_SEARCH": [
         "Best hiking gear for beginners",
@@ -283,7 +403,17 @@
         "Best ways to stay healthy",
         "How to grow your own vegetables?",
         "Top 10 documentaries to watch",
-        "How to build a sustainable lifestyle?"
+        "How to build a sustainable lifestyle?",
+        "Best hiking trails in the world",
+        "How to start a successful blog?",
+        "Top 10 books to read in 2024",
+        "How to start a successful YouTube channel?",
+        "Best ways to reduce stress",
+        "How to start a successful business?",
+        "Top 10 movies of all time",
+        "How to create a successful social media strategy?",
+        "Best ways to improve your memory",
+        "How to start a successful online store?"
     ],
     "CALENDAR": [
         "Add a property tour on September 3rd at 2:30 PM",
@@ -305,7 +435,17 @@
         "Set an appointment for a tax advisor on November 5th at 2 PM",
         "What do I have planned for December 30th?",
         "Schedule a New Year's party on January 1st at 9 PM",
-        "Check if I have any events on February 24th"
+        "Check if I have any events on February 24th",
+        "Add a doctor's appointment on March 5th at 11 AM",
+        "What's on my calendar for April 10th?",
+        "Create a meeting for May 17th at 10 AM",
+        "Am I available on June 22nd?",
+        "Set a playdate for my kids on July 14th at 3 PM",
+        "What do I have scheduled for August 7th?",
+        "Book a spa session on September 9th at 4 PM",
+        "List my plans for October 30th",
+        "Create an event for a movie night on November 6th at 9 PM",
+        "Am I available on December 3rd?"
     ],
     "SYSTEM_ACTION": [
         "Capture this screen now",
@@ -327,6 +467,16 @@
         "Capture an image of the webpage",
         "Write this log to 'log.html'",
         "Seize a screen capture",
-        "Save this message to 'message.pdf'"
+        "Save this message to 'message.pdf'",
+        "Capture this webpage",
+        "File this document in 'document.doc'",
+        "Shoot a screen capture",
+        "Save this note to 'note.txt'",
+        "Snag this screen",
+        "Store this file in 'file.doc'",
+        "Snap this display",
+        "Record this information in 'info.doc'",
+        "Take a screen capture now",
+        "Save this conversation to 'conversation.doc'"
     ]
 }
