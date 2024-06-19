@@ -24,9 +24,9 @@ albert_model = AutoModel.from_pretrained(MODEL_NAME)
 class Config:
     batch_size: int = 16
     shuffle: bool = True
-    epochs: int = 4
+    epochs: int = 3
     seed: int = 20
-    lr: float = 0.0022
+    lr: float = 0.0017
 
 def get_optimizer(model, lr):
     no_decay = ["bias", "LayerNorm.weight"]
@@ -71,7 +71,7 @@ class Net(nn.Module):
         self.albert = albert_model
 
         self.l2 = mean_pooling
-        self.dropout = nn.Dropout(p=0.1)
+        self.dropout = nn.Dropout(p=0.23)
 
         self.l3 = nn.Linear(self.albert.config.hidden_size, 68)
         self.l4 = nn.Linear(68, class_num)
