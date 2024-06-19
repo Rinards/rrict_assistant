@@ -25,8 +25,8 @@ class Config:
     batch_size: int = 16
     shuffle: bool = True
     epochs: int = 3
-    seed: int = 20
-    lr: float = 0.0017
+    seed: int = 13
+    lr: float = 0.0020
 
 def get_optimizer(model, lr):
     no_decay = ["bias", "LayerNorm.weight"]
