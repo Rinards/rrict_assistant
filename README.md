@@ -20,7 +20,6 @@ in `trained/<model name>-<trained date & time>.format`.
 ### Handler
 The source code for the Action Handler will be stored in `src/action_handler`
 
-## TODO:
-- Gather training data
-- Train classifier
-- Write action handler
+### How to run
+- Go to `src/action_handler`
+- Run `gui_action_handler.py`
