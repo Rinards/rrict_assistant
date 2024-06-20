@@ -6,6 +6,9 @@ import seaborn as sns
 from intent_analysis.model2 import Net, run_model
 from intent_analysis.label_manager import load_labels
 
+# From src/action_classifier/
+# python3 -m intent_analysis.evaluate.py
+
 # Load the test data
 with open('../../datasets/test_data.json', 'r') as f:
     test_data = json.load(f)
@@ -47,4 +50,5 @@ sns.heatmap(conf_matrix, annot=True, fmt='d', cmap='Blues', xticklabels=unique_c
 plt.xlabel('Predicted')
 plt.ylabel('Actual')
 plt.title('Confusion Matrix')
+plt.savefig('confusion_matrix.png')
 plt.show()
