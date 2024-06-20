@@ -70,27 +70,49 @@ def handle_action(input_text):
     elif label == "TALK_TO_ME":
         return "talking to you"
 
+from tkinter import ttk
+
 class ChatGUI:
     def __init__(self, master):
         self.master = master
         self.master.title("Chat Assistant")
+        self.master.geometry("600x400")
+
+        # Create a style
+        style = ttk.Style()
+        style.configure('TFrame', background='#f0f0f0')
+        style.configure('TButton', font=('Helvetica', 12))
+        style.configure('TLabel', background='#f0f0f0', font=('Helvetica', 12))
+        style.configure('TEntry', font=('Helvetica', 12))
+        style.configure('TScrolledText', font=('Helvetica', 12))
+
+        # Create a frame for the conversation area
+        self.frame_conversation = ttk.Frame(master, padding="10 10 10 10")
+        self.frame_conversation.pack(fill=tk.BOTH, expand=True)
 
         # Create a scrolled text widget for the conversation display
-        self.conversation_area = scrolledtext.ScrolledText(master, wrap=tk.WORD, state='disabled')
+        self.conversation_area = scrolledtext.ScrolledText(self.frame_conversation, wrap=tk.WORD, state='disabled', height=15)
         self.conversation_area.pack(padx=10, pady=10, fill=tk.BOTH, expand=True)
+        self.conversation_area.tag_config('user', foreground='blue')
+        self.conversation_area.tag_config('bot', foreground='green')
+
+        # Create a frame for the user input and send button
+        self.frame_input = ttk.Frame(master, padding="10 10 10 10")
+        self.frame_input.pack(fill=tk.X)
 
         # Create an entry widget for user input
-        self.user_input = tk.Entry(master, width=100)
-        self.user_input.pack(padx=10, pady=5, fill=tk.X)
+        self.user_input = ttk.Entry(self.frame_input, width=70)
+        self.user_input.pack(side=tk.LEFT, padx=(0, 10), pady=5, fill=tk.X, expand=True)
         self.user_input.bind("<Return>", self.send_message)
 
         # Create a send button
-        self.send_button = tk.Button(master, text="Send", command=self.send_message)
-        self.send_button.pack(pady=5)
+        self.send_button = ttk.Button(self.frame_input, text="Send", command=self.send_message)
+        self.send_button.pack(side=tk.RIGHT, pady=5)
 
     def display_message(self, message, sender="You"):
         self.conversation_area.config(state='normal')
-        self.conversation_area.insert(tk.END, f"{sender}: {message}\n")
+        tag = 'user' if sender == 'You' else 'bot'
+        self.conversation_area.insert(tk.END, f"{sender}: {message}\n", tag)
         self.conversation_area.config(state='disabled')
         self.conversation_area.yview(tk.END)
 
@@ -107,6 +129,7 @@ class ChatGUI:
         self.display_message(bot_response, "Bot")
 
     def get_bot_response(self, message):
+        # Replace this with your chat bot's response logic
         return handle_action(message)
 
 if __name__ == "__main__":
